@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana-dev
+  namespace: argocd
+spec:
+  destination:
+    namespace: monitoring
+    server: "https://kubernetes.default.svc"
+  project: default
+  source:
+    path: charts/grafana
+    repoURL: "https://github.com/effip24/argotest.git"
+    targetRevision: main
+    helm:
+      releaseName: grafana
+      valueFiles:
+        - values.yaml
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
