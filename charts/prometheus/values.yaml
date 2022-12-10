@@ -643,7 +643,7 @@ serverFiles:
           - source_labels: [__param_target]
             target_label: instance
           - target_label: __address__
-            replacement: prometheus-blackbox-prometheus-blackbox-exporter:9115
+            replacement: blackbox-exporter-prometheus-blackbox-exporter:9115
 
 
 
