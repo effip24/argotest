@@ -636,7 +636,7 @@ serverFiles:
           module: [http_2xx]
         static_configs:
           - targets:
-            - http://www.effip.me
+            - https://www.google.com
         relabel_configs:
           - source_labels: [__address__]
             target_label: __param_target
