@@ -15,7 +15,7 @@ spec:
     helm:
       releaseName: flags
       valueFiles:
-        - flags.yaml
+        - apps/flags.yaml
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
