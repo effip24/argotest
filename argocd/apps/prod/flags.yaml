@@ -1,21 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: invoice-dev
+  name: flags-prod
   namespace: argocd
 spec:
   destination:
     namespace: apps
     server: "https://kubernetes.default.svc"
-  project: default
+  project: prod
   source:
     path: charts/my-apps
     repoURL: "https://github.com/effip24/argotest.git"
     targetRevision: main
     helm:
-      releaseName: invoice
+      releaseName: flags
       valueFiles:
-        - values/dev/invoice.yaml
+        - values/prod/flags.yaml
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

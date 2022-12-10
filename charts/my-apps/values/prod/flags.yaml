@@ -11,8 +11,8 @@ image:
   tag: "latest"
 
 imagePullSecrets: []
-nameOverride: "flags-dev"
-fullnameOverride: "flags-dev"
+nameOverride: "flags-prod"
+fullnameOverride: "flags-prod"
 
 serviceAccount:
   # Specifies whether a service account should be created

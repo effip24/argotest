@@ -11,8 +11,8 @@ image:
   tag: "latest"
 
 imagePullSecrets: []
-nameOverride: "entertainment"
-fullnameOverride: "entertainment"
+nameOverride: "entertainment-dev"
+fullnameOverride: "entertainment-dev"
 
 serviceAccount:
   # Specifies whether a service account should be created

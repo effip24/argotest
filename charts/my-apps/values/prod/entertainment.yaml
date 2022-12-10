@@ -5,14 +5,14 @@
 replicaCount: 1
 
 image:
-  repository: effip24/flags
+  repository: effip24/entertainment
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
 imagePullSecrets: []
-nameOverride: "flags-dev"
-fullnameOverride: "flags-dev"
+nameOverride: "entertainment-prod"
+fullnameOverride: "entertainment-prod"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -40,7 +40,7 @@ securityContext:
 
 service:
   type: LoadBalancer
-  port: 9091
+  port: 9093
   targetPort: 3000
 
 ingress:

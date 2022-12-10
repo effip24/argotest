@@ -11,8 +11,8 @@ image:
   tag: "latest"
 
 imagePullSecrets: []
-nameOverride: "invoice"
-fullnameOverride: "invoice"
+nameOverride: "invoice-dev"
+fullnameOverride: "invoice-dev"
 
 serviceAccount:
   # Specifies whether a service account should be created
