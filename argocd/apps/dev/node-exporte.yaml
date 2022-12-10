@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prometheus-dev
+  name: prometheus-node-exporter-dev
   namespace: monitoring
 spec:
   destination:
@@ -9,11 +9,11 @@ spec:
     server: "https://kubernetes.default.svc"
   project: default
   source:
-    path: charts/prometheus
+    path: charts/node-exporter
     repoURL: "https://github.com/effip24/argotest.git"
     targetRevision: main
     helm:
-      releaseName: prometheus
+      releaseName: prometheus-node-exporter
       valueFiles:
         - values.yaml
   syncPolicy:
