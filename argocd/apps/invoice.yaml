@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: invoice
+  namespace: argocd
+spec:
+  destination:
+    namespace: apps
+    server: "https://kubernetes.default.svc"
+  project: default
+  source:
+    path: my-charts/apps/invoice.yaml
+    repoURL: "https://github.com/effip24/argotest.git"
+    targetRevision: main
+    helm:
+      releaseName: invoice
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
