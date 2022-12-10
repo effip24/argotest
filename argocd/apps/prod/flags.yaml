@@ -1,24 +1,24 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: flags-prod
-  namespace: argocd
-spec:
-  destination:
-    namespace: prod
-    server: "https://kubernetes.default.svc"
-  project: prod
-  source:
-    path: charts/my-apps
-    repoURL: "https://github.com/effip24/argotest.git"
-    targetRevision: main
-    helm:
-      releaseName: flags
-      valueFiles:
-        - values/prod/flags.yaml
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
-    automated:
-      prune: true
-      selfHeal: true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: flags-prod
+#   namespace: argocd
+# spec:
+#   destination:
+#     namespace: prod
+#     server: "https://kubernetes.default.svc"
+#   project: prod
+#   source:
+#     path: charts/my-apps
+#     repoURL: "https://github.com/effip24/argotest.git"
+#     targetRevision: main
+#     helm:
+#       releaseName: flags
+#       valueFiles:
+#         - values/prod/flags.yaml
+#   syncPolicy:
+#     syncOptions:
+#       - CreateNamespace=true
+#     automated:
+#       prune: true
+#       selfHeal: true
