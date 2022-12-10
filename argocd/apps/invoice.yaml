@@ -9,13 +9,13 @@ spec:
     server: "https://kubernetes.default.svc"
   project: default
   source:
-    path: my-charts/
+    path: charts/
     repoURL: "https://github.com/effip24/argotest.git"
     targetRevision: main
     helm:
       releaseName: invoice
       valueFiles:
-        - apps/invoice.yaml
+        - values/invoice.yaml
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
