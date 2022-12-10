@@ -13,7 +13,7 @@ spec:
     repoURL: "https://github.com/effip24/argotest.git"
     targetRevision: main
     helm:
-      releaseName: my-chart
+      releaseName: flags.yaml
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
