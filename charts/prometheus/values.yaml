@@ -630,6 +630,20 @@ serverFiles:
           - targets:
               - localhost:9090
 
+      - job_name: "blackbox-http"
+      metrics_path: "/blackbox-exporter/probe"
+      params:
+        module: ["http_2xx"]
+      relabel_configs:
+        - source_labels: ["__address__"]
+        target_label: "__param_target"
+        - source_labels: ["__param_target"]
+        target_label: "instance"
+        - target_label: "__address__"
+        replacement: "prometheus-blackbox-exporter:9115"
+      static_configs:
+        - targets: ["172.17.0.12:3000"]
+
       # A scrape configuration for running Prometheus on a Kubernetes cluster.
       # This uses separate scrape configs for cluster components (i.e. API server, node)
       # and services to allow each to use different authentication configs.
