@@ -1,27 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
-
 kind: Application
-
 metadata:
   name: main-app
-
 spec:
   destination:
     namespace: apps
-
     server: "https://kubernetes.default.svc"
-
   source:
     path: argocd/apps
-
     repoURL: "https://github.com/effip24/argotest.git"
-
     targetRevision: HEAD
-
   project: default
-
   syncPolicy:
     automated:
       prune: true
-
       selfHeal: true
